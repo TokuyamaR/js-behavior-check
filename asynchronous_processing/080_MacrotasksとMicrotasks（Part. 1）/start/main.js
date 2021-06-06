@@ -17,12 +17,13 @@ setTimeout(function () {
   console.log("setTimeout");
 });
 
+// 非同期(マイクロタスク)
 new Promise(function (resolve) {
   // ①
   console.log("promise");
   resolve();
 }).then(function () {
-  // ③非同期(マイクロタスク)
+  // ③
   console.log("then");
 });
 
