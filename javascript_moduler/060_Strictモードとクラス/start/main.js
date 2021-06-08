@@ -1,9 +1,22 @@
+// クラスの中ではデフォルトでstrict modeとなる
+function fn() {
+  return this;
+}
+console.log(fn());
 class C {
-    constructor() {
+  constructor() {
+    function fn() {
+      return this;
     }
+    console.log(fn());
+  }
 
-    method() {
+  method() {
+    function fn() {
+      return this;
     }
+    console.log(fn());
+  }
 }
 
 const c = new C();
