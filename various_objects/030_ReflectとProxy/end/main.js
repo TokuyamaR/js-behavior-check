@@ -2,7 +2,7 @@ const targetObj = {
   a: 0,
   get value() {
     return this.b;
-  }
+  },
 };
 
 const handler = {
@@ -13,8 +13,8 @@ const handler = {
     } else {
       return -1;
     }
-  }
-}
+  },
+};
 const pxy = new Proxy(targetObj, handler);
 console.log(pxy.value);
 console.log(pxy.b);
