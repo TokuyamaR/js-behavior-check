@@ -1,3 +1,10 @@
 <script type="module">
-
+  // reactive: オブジェクトなどの値の変更に伴い、別の処理が走ること。処理はeffectと呼ぶ
+  import { effect, reactive } from "./reactivity.esm-browser.js";
+  const obj = reactive({ a: 0 });
+  // obj.aの変更に伴い、effectの処理が実行される
+  effect(() => {
+    console.log(obj.a);
+  });
+  obj.a = 1;
 </script>
